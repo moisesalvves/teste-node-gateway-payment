@@ -1,0 +1,28 @@
+{
+  "name": "meu-gateway-pagamento",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.test.js --timeout 10000 --exit",
+    "dev": "cross-env NODE_ENV=development pm2 start server.js --name \"gateway-dev\" --watch",
+    "start": "cross-env NODE_ENV=production pm2 start server.js --name \"gateway-prod\" -i max",
+    "stop": "pm2 stop all",
+    "logs": "pm2 logs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "cross-env": "^10.1.0",
+    "mocha": "^11.3.0",
+    "supertest": "^7.2.2"
+  }
+}
